@@ -126,13 +126,6 @@ java -cp src application.Program
 
 ---
 
-## 👨‍💻 Author
-
-- **Guilherme Miranda**  
-[LinkedIn](https://www.linkedin.com/in/guilhermeemiranda) | [GitHub](https://github.com/xguimiranda)
-
----
-
 ## ⚠️ Disclaimer
 
 This project was developed for educational purposes as part of the Java OOP course by Prof. Dr. Nélio Alves. It runs entirely in the console and focuses on applying programming concepts rather than providing a full-featured commercial chess engine.
