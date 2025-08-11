@@ -1,131 +1,129 @@
+# ♟️ Sistema de Jogo de Xadrez em Java
 
-# ♟️ Chess Game System in Java
-
-This is a console-based chess game developed in Java, created as a hands-on project to apply the concepts of **Object-Oriented Programming (OOP)** learned throughout the course ["Java OOP"](http://educandoweb.com.br) by Prof. Dr. Nélio Alves.
-
-The main goal of this project is to consolidate knowledge about OOP concepts, exception handling, data structures, and clean code practices by building a fully functional chess game that runs in the terminal.
+Este é um jogo de xadrez em console desenvolvido em Java, criado como projeto prático para aplicar os conceitos de **Programação Orientada a Objetos (POO)** aprendidos ao longo do curso “Java OOP” (Prof. Nélio Alves).  
+O objetivo principal do projeto é consolidar conhecimentos sobre POO, tratamento de exceções, estruturas de dados e práticas de código limpo construindo um jogo de xadrez totalmente funcional que roda no terminal.
 
 ---
 
-## 🚀 Features
+## 🚀 Funcionalidades
 
-- ✅ Full chess game playable in the terminal  
-- ✅ Chess rules implemented, including:
-  - ✔️ Check  
-  - ✔️ Checkmate  
-  - ✔️ Castling (Kingside and Queenside)  
-  - ✔️ En Passant  
-  - ✔️ Pawn Promotion  
-- ✅ Turn-based control with alternating players  
-- ✅ Board visualization with colored pieces (white/black)  
-- ✅ Display of possible moves for selected pieces  
-- ✅ Captured pieces tracking  
-- ✅ Defensive programming with custom exceptions  
-- ✅ Clean screen between turns for better user experience  
-
----
-
-## 🏗️ Object-Oriented Design
-
-### ✔️ Main OOP Concepts Applied:
-- Classes and Objects  
-- Encapsulation  
-- Inheritance  
-- Polymorphism  
-- Abstraction (abstract classes and methods)  
-- Exception handling with custom exceptions  
-- Layers architecture (UI layer, Chess layer, Board layer)  
+- ✅ Jogo completo de xadrez jogável no terminal  
+- ✅ Regras implementadas, incluindo:
+  - ✔️ Xeque  
+  - ✔️ Xeque-mate  
+  - ✔️ Roque (pequeno e grande)  
+  - ✔️ En passant  
+  - ✔️ Promoção de peão  
+- ✅ Controle de turnos alternando jogadores  
+- ✅ Visualização do tabuleiro com distinção de peças brancas/pretas  
+- ✅ Exibição dos movimentos possíveis da peça selecionada  
+- ✅ Registro de peças capturadas  
+- ✅ Programação defensiva com exceções personalizadas  
+- ✅ Limpa a tela entre os turnos para melhor experiência  
 
 ---
 
-## 🎯 Classes Overview
+## 🏗️ Design Orientado a Objetos
 
-### 📄 **boardgame package**
-- `Position`: Represents board coordinates (row and column)  
-- `Board`: Manages pieces, positions, and board rules  
-- `Piece`: Generic piece superclass  
-- `BoardException`: Handles invalid board-related operations  
+### ✔️ Conceitos Aplicados:
+- Classes e Objetos  
+- Encapsulamento  
+- Herança  
+- Polimorfismo  
+- Abstração (classes e métodos abstratos)  
+- Tratamento de exceções (exceções personalizadas)  
+- Arquitetura em camadas (UI, camada de xadrez, camada de tabuleiro)
 
-### ♟️ **chess package**
-- `ChessMatch`: Main class to control game logic and flow  
-- `ChessPiece`: Extends `Piece` with chess-specific logic  
-- `ChessPosition`: Converts between chess notation (e.g., e4) and matrix positions  
-- `ChessException`: Handles chess-specific errors  
+---
 
-#### Pieces Implemented:
-- `King` (with castling logic)  
+## 🎯 Visão Geral das Classes
+
+### 📄 Pacote **boardgame**
+- `Position`: Representa coordenadas do tabuleiro (linha e coluna)  
+- `Board`: Gerencia peças, posições e regras de uso do tabuleiro  
+- `Piece`: Superclasse genérica de peça  
+- `BoardException`: Exceções para operações inválidas relacionadas ao tabuleiro  
+
+### ♟️ Pacote **chess**
+- `ChessMatch`: Classe principal que controla a lógica e o fluxo do jogo  
+- `ChessPiece`: Extende `Piece` com comportamento específico de xadrez  
+- `ChessPosition`: Converte entre notação de xadrez (ex.: e4) e posição matricial  
+- `ChessException`: Exceções específicas do domínio de xadrez  
+
+#### Peças Implementadas
+- `King` (inclui lógica de roque)  
 - `Queen`  
 - `Rook`  
 - `Bishop`  
 - `Knight`  
-- `Pawn` (with promotion and en passant)  
+- `Pawn` (com promoção e en passant)  
 
 ---
 
-## 🖥️ How to Run
+## 🖥️ Como Executar
 
-### ✔️ Prerequisites
-- Java JDK 11 or later  
-- IDE like IntelliJ, Eclipse, NetBeans, or terminal with Java installed  
+### ✔️ Pré-requisitos
+- Java JDK 11 ou superior  
+- IDE (IntelliJ / Eclipse / NetBeans) ou apenas terminal com Java configurado  
 
-### ✔️ Run the project
-1. Clone the repository:  
-```bash
-git clone https://github.com/your-username/chess-game-java.git
-```
-
-2. Navigate into the project folder:  
-```bash
-cd chess-game-java
-```
-
-3. Compile the code:  
-```bash
-javac src/application/Program.java
-```
-
-4. Run the game:  
-```bash
-java -cp src application.Program
-```
+### ✔️ Passos
+1. Clonar o repositório:
+   ```bash
+   git clone https://github.com/xguimiranda/chess-system-java.git
+   ```
+2. Entrar na pasta:
+   ```bash
+   cd chess-system-java
+   ```
+3. Compilar:
+   (exemplo simples – ajuste conforme estrutura real)
+   ```bash
+   javac -classpath src -d bin $(find src -name "*.java")
+   ```
+4. Executar:
+   ```bash
+   java -cp bin application.Program
+   ```
 
 ---
 
-## 🎨 Terminal Colors
+## 🎨 Cores no Terminal
 
-- White pieces → Uppercase letters  
-- Black pieces → Lowercase letters with different color  
+- Peças brancas → letras maiúsculas  
+- Peças pretas → letras minúsculas (podem aparecer com cor distinta dependendo do terminal)
 
-> ⚠️ Colors may depend on your terminal. Recommended to use Git Bash (Windows) or native terminal (Linux/Mac) for best visualization.
-
----
-
-## 🚧 Implemented Rules
-
-| Rule               | Status |
-|--------------------|--------|
-| Move validation    | ✅      |
-| Turns and players  | ✅      |
-| Check detection    | ✅      |
-| Checkmate detection| ✅      |
-| Castling           | ✅      |
-| En Passant         | ✅      |
-| Promotion          | ✅      |
-| Captured pieces UI | ✅      |
+> Observação: Em alguns terminais Windows antigos as cores podem não aparecer corretamente. Use Git Bash ou Windows Terminal / Linux / macOS para melhor resultado.
 
 ---
 
-## 📚 Concepts Covered
+## 🚧 Regras Implementadas
 
-- ✅ OOP (Encapsulation, Inheritance, Polymorphism, Abstraction)  
-- ✅ Exception Handling (BoardException, ChessException)  
-- ✅ Defensive Programming  
-- ✅ Data Structures (Matrix, Lists)  
-- ✅ Clean Code Principles  
-- ✅ Layered Architecture  
+| Regra                | Status |
+|----------------------|--------|
+| Validação de movimentos | ✅ |
+| Turnos e jogadores      | ✅ |
+| Detecção de xeque       | ✅ |
+| Detecção de xeque-mate  | ✅ |
+| Roque                   | ✅ |
+| En passant              | ✅ |
+| Promoção                | ✅ |
+| Exibição de capturas    | ✅ |
 
 ---
 
-## ⚠️ Disclaimer
+## 📚 Conceitos Abrangidos
 
-This project was developed for educational purposes as part of the Java OOP course by Prof. Dr. Nélio Alves. It runs entirely in the console and focuses on applying programming concepts rather than providing a full-featured commercial chess engine.
+- ✅ POO (Encapsulamento, Herança, Polimorfismo, Abstração)  
+- ✅ Tratamento de Exceções (BoardException, ChessException)  
+- ✅ Programação Defensiva  
+- ✅ Estruturas de Dados (Matriz, Listas)  
+- ✅ Princípios de Código Limpo  
+- ✅ Arquitetura em Camadas  
+
+---
+
+## ⚠️ Aviso
+
+Projeto desenvolvido para fins educacionais como parte do curso de Programação Orientada a Objetos em Java (Prof. Nélio Alves). Roda totalmente em console e prioriza a aplicação de conceitos de programação em vez de interface gráfica.
+
+---
